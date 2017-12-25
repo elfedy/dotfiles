@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Federico Rodriguez
+#	email = federicorodriguez@Federicos-MacBook-Pro.local
+[user]
+	name = Federico Rodriguez
+	email = federodriguez.88@gmail.com
+[github]
+  user = elfedy
+[bitbucket]
+  user = ferodrig
+  email = federico@mejuri.com
+[merge]
+	tool = opendiff
+[alias]
+	co = checkout
+[credential]
+	helper = osxkeychain
+  useHttpPath = true
