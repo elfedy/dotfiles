@@ -46,6 +46,10 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+" Use 4 spaces for c files
+autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
+
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
