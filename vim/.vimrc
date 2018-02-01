@@ -5,6 +5,9 @@ execute pathogen#infect()
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
+" Set autoread
+set autoread
+
 " Switch syntax highlighting on
 syntax on
 
@@ -91,3 +94,6 @@ nmap k gk
 imap <C-s> <Esc>:w<CR>
 nmap <leader>f :CtrlP<CR>
 
+" Autoformat elixir files using mix formatter
+autocmd BufWritePost *.exs silent :!mix format %
+autocmd BufWritePost *.ex silent :!mix format %
