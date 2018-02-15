@@ -21,3 +21,6 @@ alias psrv="source .env && iex -S mix phx.server"
 # Node paths
 export PATH="$HOME/.node_modules_global/bin:$PATH"
 export NODE_PATH="$HOME/.node_modules_global/lib/node_modules"
+
+# Python path
+export PATH="/usr/local/Cellar/python/2.7.13/bin/python:$PATH"
