@@ -18,9 +18,6 @@ autocmd VimResized * :wincmd =
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-" Autoformat .elm files when saving
-let g:elm_format_autosave = 1
-
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
@@ -49,8 +46,9 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" Use 4 spaces for c files
+" Use 4 spaces for c and elm files
 autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype elm setlocal ts=4 sw=4 sts=4 expandtab
 
 
 " Shortcut to rapidly toggle `set list`
@@ -94,6 +92,3 @@ nmap k gk
 imap <C-s> <Esc>:w<CR>
 nmap <leader>f :CtrlP<CR>
 
-" Autoformat elixir files using mix formatter
-autocmd BufWritePost *.exs silent :!mix format %
-autocmd BufWritePost *.ex silent :!mix format %
