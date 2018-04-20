@@ -22,5 +22,10 @@ alias psrv="source .env && iex -S mix phx.server"
 export PATH="$HOME/.node_modules_global/bin:$PATH"
 export NODE_PATH="$HOME/.node_modules_global/lib/node_modules"
 
-# Python path
-export PATH="/usr/local/Cellar/python/2.7.13/bin/python:$PATH"
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="Users/federicorodriguez/Library/Python/3.6/bin:${PATH}"
+export PATH
+
+#path for custom executables
+export PATH="$HOME/bin:$PATH"
