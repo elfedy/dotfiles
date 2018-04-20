@@ -2,3 +2,4 @@
 vim/autoload/plug.vim
 vim/bundle
 vim/sessions
+vim/.vim/view/
