@@ -41,14 +41,13 @@ nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
 " Set tab configuration
-set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
 " Use 4 spaces for c and elm files
-autocmd Filetype c setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype elm setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype c setlocal ts=4 sw=4 sts=4
+autocmd Filetype elm setlocal ts=4 sw=4 sts=4
 
 
 " Shortcut to rapidly toggle `set list`

@@ -27,6 +27,9 @@ export NODE_PATH="$HOME/.node_modules_global/lib/node_modules"
 PATH="Users/federicorodriguez/Library/Python/3.6/bin:${PATH}"
 export PATH
 
+# Use kiex's default version for elixir
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
 #path for custom executables
 export PATH="$HOME/bin:$PATH"
 
