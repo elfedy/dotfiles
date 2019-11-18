@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -21,17 +23,11 @@ nnoremap <leader>= :wincmd =<cr>
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
-" Show line numbers
-set relativenumber
-
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 
 " Save last 100 commands
 set history=100
-
-" Show line numbers
-set number
 
 " Leader key to space
 let mapleader = "\<Space>"
@@ -39,6 +35,7 @@ let mapleader = "\<Space>"
 " Leader commands
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
+nmap <leader>C :CtrlPClearCache<cr>
 
 " Set tab configuration
 set shiftwidth=2
@@ -83,6 +80,9 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor\ --column
   set grepformat=%f:%l:%c%m
 end
+
+" No limit for ctrlp
+let g:ctrlp_max_files = 0
 
 " Key mapping
 nmap j gj

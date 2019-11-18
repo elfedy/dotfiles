@@ -17,6 +17,8 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 #Aliases
 
 alias psrv="source .env && iex -S mix phx.server"
+alias pconsole="source .env && iex -S mix"
+alias ptest="source .env && iex -S mix test"
 
 # Node paths
 export PATH="$HOME/.node_modules_global/bin:$PATH"
@@ -37,3 +39,6 @@ export PATH="$HOME/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Use default nvm version without prefix option
+nvm use --delete-prefix default
