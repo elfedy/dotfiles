@@ -41,11 +41,21 @@ nmap <leader>C :CtrlPClearCache<cr>
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set expandtab
 
 " Use 4 spaces for c and elm files
 autocmd Filetype c setlocal ts=4 sw=4 sts=4
 autocmd Filetype elm setlocal ts=4 sw=4 sts=4
 
+" Use tabs for Makefile and Go
+autocmd Filetype make setlocal noexpandtab 
+autocmd Filetype go setlocal noexpandtab 
+
+"Use c syntax for Objective C files
+autocmd Filetype m setlocal syntax=c
+autocmd Filetype m setlocal ts=4 sw=4 sts=4
+autocmd Filetype mm setlocal syntax=c
+autocmd Filetype mm setlocal ts=4 sw=4 sts=4
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
