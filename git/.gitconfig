@@ -1,5 +1,5 @@
 [user]
-	name = Federico Rodriguez
+	name = spikeonmars
 	email = federodriguez.88@gmail.com
 [github]
   user = elfedy
@@ -13,3 +13,8 @@
 [credential]
 	helper = osxkeychain
   useHttpPath = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

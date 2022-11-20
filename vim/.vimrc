@@ -36,6 +36,8 @@ let mapleader = "\<Space>"
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 nmap <leader>C :CtrlPClearCache<cr>
+nmap <leader>d :cd %:h<cr>
+nmap <leader>l :set list!<CR>
 
 " Set tab configuration
 set shiftwidth=2
@@ -56,9 +58,6 @@ autocmd Filetype m setlocal syntax=c
 autocmd Filetype m setlocal ts=4 sw=4 sts=4
 autocmd Filetype mm setlocal syntax=c
 autocmd Filetype mm setlocal ts=4 sw=4 sts=4
-
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
 
 " Save temporary files in another file
 set backupdir=$TMPDIR//
@@ -100,4 +99,7 @@ nmap k gk
 
 imap <C-s> <Esc>:w<CR>
 nmap <leader>f :CtrlP<CR>
+
+" Do not scan all included files when autocompleting (which is slow)
+set complete-=i
 
