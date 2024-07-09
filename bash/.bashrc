@@ -72,6 +72,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+# ALIASES
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -96,6 +97,16 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# ALIASES
+alias vim="nvim"
+alias oldivm="vim"
+
+alias getip="curl -4 https://ifconfig.me; echo"
+alias mapctrl="setxkbmap -layout us -option ctrl:nocaps"
+
+alias forgezk="~/msl/foundry-zksync/target/release/forge"
+alias forgezkdev="~/msl/foundry-zksync/target/debug/forge"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -117,19 +128,30 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/elfedy/go/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/bin
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
 . "$HOME/.cargo/env"
 export GPG_TTY=$(tty)
 
-alias vim="nvim"
-alias oldivm="vim"
+export GDK_SCALE=1
+#export GDK_SCALE=2
 
-alias getip="curl -4 https://ifconfig.me; echo"
+# sccache setup
+#export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
+#SCCACHE_CACHE_SIZE="5G"
 
 setxkbmap -layout us -option ctrl:nocaps
 
+# pnpm
+export PNPM_HOME="/home/elfedy/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
